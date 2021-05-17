@@ -9,8 +9,8 @@ esphome:
     - hp303b.h
     
 wifi:
-  ssid: "Croissant"
-  password: "0093699323"
+  ssid: "ssid"
+  password: "WPA"
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
@@ -37,9 +37,9 @@ sensor:
     sensors:
       - name: "Barometric Pressure"
         icon: "mdi:gauge"
-        unit_of_measurement: hPa
+        unit_of_measurement: "hPa"
         accuracy_decimals: 1
       - name: "Temperature"
         icon: "mdi:gauge"
-        unit_of_measurement: °C
+        unit_of_measurement: "°C"
         accuracy_decimals: 1
