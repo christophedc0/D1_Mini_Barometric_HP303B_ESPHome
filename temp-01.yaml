@@ -1,0 +1,45 @@
+esphome:
+  name: temp-01
+  platform: ESP8266
+  board: d1_mini
+  libraries:
+    - "wemos/LOLIN_HP303B_Library" # lib from github
+    - "SPI" # lib from platformio
+  includes:
+    - hp303b.h
+    
+wifi:
+  ssid: "SSID"
+  password: "WPA"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Temp-01 Fallback Hotspot"
+    password: "ZRExiYSHR4C8"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+  - platform: custom
+    lambda: |-
+      auto hp_sensor = new HP303BSensor();
+      App.register_component(hp_sensor);
+      return {hp_sensor->pressure_sensor, hp_sensor->temperature_sensor};
+
+    sensors:
+      - name: "Barometric Pressure"
+        icon: "mdi:gauge"
+        unit_of_measurement: "hPa"
+        accuracy_decimals: 1
+      - name: "Temperature"
+        icon: "mdi:gauge"
+        unit_of_measurement: "°C"
+        accuracy_decimals: 1
