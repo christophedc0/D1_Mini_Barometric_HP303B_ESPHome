@@ -30,19 +30,11 @@ class HP303BSensor : public PollingComponent, public Sensor {
     hp.measurePressureOnce(pressure); // library returns value in in Pa, which equals 1/100 hPa
     float hPa = pressure / 100.0;
     pressure_sensor->publish_state(hPa);
-
     ESP_LOGD(TAGhp, "Got pressure=%.1f hPa", hPa);
-//    publish_state(hPa); 
-    Serial.print("Pressure is: ");
-    Serial.println(hPa);  
 
-    hp.measureTempOnce(temperature); // library returns value in in Pa, which equals 1/100 hPa
+    hp.measureTempOnce(temperature); // library returns value in °C.
     float C = temperature;
     temperature_sensor->publish_state(C);
-
     ESP_LOGD(TAGhp, "Got temperature=%.1f C", C);
-//    publish_state(C);
-    Serial.print("Temperature is: ");
-    Serial.println(C);
   }
 };
