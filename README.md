@@ -8,14 +8,14 @@ D1 Mini with HP303B shield for Home-Assistant with ESPHome
 Soldering skills to connect the shield to the microcontroller.
 
 ## Libraries & software used
-* [Official Wemos Repository](https://github.com/wemos/LOLIN_HP303B_Library)
-* [Dmptrluke Repository](https://github.com/dmptrluke/esphome_hp303b)
+* [Official Wemos repository](https://github.com/wemos/LOLIN_HP303B_Library)
+* [Dmptrluke repository](https://github.com/dmptrluke/esphome_hp303b)
 * [ESPHome](https://esphome.io)
 * [Home-Assistant](https://www.home-assistant.io)
 
 
 ## Usage
-1. I made a basic configuration to connect to the wireless network, with a local ESPHome instance.
+1. I made a basic configuration to connect to the wireless network, with a local ESPHome instance over USB connection.
 ```bash
 INFO Connecting to temp-01.local:6053 (X.X.X.X)
 INFO Successfully connected to temp-01.local
